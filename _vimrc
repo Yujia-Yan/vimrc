@@ -21,7 +21,7 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-" git plugin
+" git plugin   Gblame Gmove Ggrep Gread Gbrowse 
 Bundle 'tpope/vim-fugitive'
 
 "easymotion press <leader><leader>f/F/w/W/b/B to get a selectable motion
@@ -31,20 +31,25 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'xuhdev/SingleCompile'
 
 "colorscheme
-"taglist
+"taglist hit <F8>
 Bundle "Tagbar"
-"filebrowser
+"filebrowser hit <F9>
 Bundle "scrooloose/nerdtree"
-"commenter
+"commenter  gcc:current line    gc{motion} gC{motion}comment region
 Bundle "tComment"
 "autocomplete Engine
 Bundle 'Valloric/YouCompleteMe'
 "parenthesis enhancement
 Bundle 'kien/rainbow_parentheses.vim'
-"linux kernel style
-Bundle 'indent-Finder'
+
 Bundle 'matlab.vim'
-Bundle 'google.vim'
+"fuzzy file buffer mru tag finder   <C-p>
+Bundle 'kien/ctrlp.vim'
+"auto format
+Bundle 'Chiel92/vim-autoformat'
+
+"manage quoting/parenthesizing
+Bundle "tpope/vim-surround"
 filetype plugin indent on     " required!
 "
 " Brief help
@@ -59,12 +64,11 @@ filetype plugin indent on     " required!
 "my own part
 syntax on
 set nu
-set autoindent
-set smartindent
 set tabstop=4
 set shiftwidth=4
 set showmatch
 set incsearch
+set cindent
 set scrolloff=5
 set title
 set laststatus=2
@@ -146,14 +150,25 @@ nmap<F3> :w<CR>
 "Debug and Build
 "compile and run with the default setting
 " map<F5> :call CompileRun()<CR>
- nmap <F4> :SCCompile<cr>
- nmap <F5> :SCCompileRun<cr>
+nmap <F4> :SCCompile<cr>
+nmap <F5> :SCCompileRun<cr>
+
+"auto format
+noremap <F4> :Autoformat<CR>
 "trigger taglist
 nnoremap <silent> <F8> :TagbarToggle<CR>
 "trigger NERDTree
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
+let g:ctrlp_map ='<c-p>'
+let g:ctrlp_cm  ='CtrlP'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
+let g:ctrlp_working_path_mode = 'ra'
 
 "rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
