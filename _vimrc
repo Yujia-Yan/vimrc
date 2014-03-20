@@ -41,9 +41,10 @@ Bundle "tComment"
 Bundle 'Valloric/YouCompleteMe'
 "parenthesis enhancement
 Bundle 'kien/rainbow_parentheses.vim'
-
+"linux kernel style
+Bundle 'indent-Finder'
 Bundle 'matlab.vim'
-
+Bundle 'google.vim'
 filetype plugin indent on     " required!
 "
 " Brief help
@@ -81,8 +82,9 @@ set gdefault
 "set cursorline
 set showcmd
 "ycmcomplete 
-let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_min_num_identifier_candidate_chars = 0
+let g:ycm_auto_trigger = 1
 let g:ycm_filetype_whitelist = { '*': 1 }
 let g:ycm_filetype_blacklist = {
 			\ 'notes' : 1,
@@ -90,11 +92,12 @@ let g:ycm_filetype_blacklist = {
 			\ 'text' : 1,
 			\}
 let g:ycm_filetype_specific_completion_to_disable = {}
-let g:ycm_register_as_syntastic_checker = 1
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>>'
 let g:ycm_allow_changing_updatetime = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 0
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_collect_identifiers_from_tags_files = 0
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_add_preview_to_completeopt = 0
@@ -105,7 +108,7 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_key_detailed_diagnostics = '<leader>d'
-let g:ycm_global_ycm_extra_conf = vimfilespath.'/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = vimfilespath.'/configure/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_extra_conf_globlist = []
 let g:ycm_filepath_completion_use_working_dir = 0
@@ -125,15 +128,20 @@ let g:ycm_cache_omnifunc = 1
 
 
 "easymotion
-let g:EasyMotion_leader_key=','
+"let g:EasyMotion_leader_key=','
 "my own
 "
 "key bind
 "press ctrl+x to close the file
-nnoremap <C-x> <Esc> :q<CR>
+nnoremap <C-x> <Esc>:q<CR>
+"go to definition <leader>jd
+noremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
 "cancel search command
-nmap<F2> :nohlsearch<CR>
+nmap <silent><F2> :nohlsearch<CR>
+
+"save the file
+nmap<F3> :w<CR>
 
 "Debug and Build
 "compile and run with the default setting
@@ -144,6 +152,9 @@ nmap<F2> :nohlsearch<CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
 "trigger NERDTree
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
+
+
+
 "rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
