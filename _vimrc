@@ -35,8 +35,8 @@ Bundle 'xuhdev/SingleCompile'
 Bundle "Tagbar"
 "filebrowser hit <F9>
 Bundle "scrooloose/nerdtree"
-"commenter  gcc:current line    gc{motion} gC{motion}comment region
-Bundle "tComment"
+"commenter <leader>cc <leader>cu 
+Bundle "scrooloose/nerdcommenter"
 "autocomplete Engine
 Bundle 'Valloric/YouCompleteMe'
 "parenthesis enhancement
@@ -152,7 +152,6 @@ nmap<F3> :w<CR>
 " map<F5> :call CompileRun()<CR>
 nmap <F4> :SCCompile<cr>
 nmap <F5> :SCCompileRun<cr>
-
 "auto format
 noremap <F4> :Autoformat<CR>
 "trigger taglist
@@ -163,10 +162,10 @@ nnoremap <silent> <F9> :NERDTreeToggle<CR>
 let g:ctrlp_map ='<c-p>'
 let g:ctrlp_cm  ='CtrlP'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+			\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+			\ 'file': '\v\.(exe|so|dll)$',
+			\ 'link': 'some_bad_symbolic_links',
+			\ }
 
 let g:ctrlp_working_path_mode = 'ra'
 
@@ -175,3 +174,6 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+
+
