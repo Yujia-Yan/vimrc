@@ -52,7 +52,7 @@ Bundle 'Chiel92/vim-autoformat'
 Bundle "tpope/vim-surround"
 
 
-"alignment tabularize 
+"alignment tabularize  or <leader>a*
 Bundle "godlygeek/tabular"
 filetype plugin indent on     " required!
 "
@@ -162,8 +162,13 @@ nnoremap <c-right> :tabnext<CR>
 inoremap <c-t> <Esc>:tabnew<CR>
 inoremap <c-left> <Esc>:tabprevious<CR>
 inoremap <c-right> <Esc>:tabnext<CR>
+"tabularize
 
 
+nnoremap <Leader>a= :Tabularize /=<CR>
+nnoremap <Leader>a, :Tabularize /,<CR>
+vnoremap <Leader>a= :Tabularize /=<CR>
+vnoremap <Leader>a, :Tabularize /,<CR>
 "Debug and Build
 "compile and run with the default setting
 " map<F5> :call CompileRun()<CR>
