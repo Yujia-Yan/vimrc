@@ -50,6 +50,10 @@ Bundle 'Chiel92/vim-autoformat'
 
 "manage quoting/parenthesizing
 Bundle "tpope/vim-surround"
+
+
+"alignment tabularize 
+Bundle "godlygeek/tabular"
 filetype plugin indent on     " required!
 "
 " Brief help
@@ -81,7 +85,7 @@ set fileencoding=utf-8
 set mouse=a
 set matchpairs+=<:>
 set matchpairs+={:}
-set wildmenu 
+set wildmenu
 set wildmode=list:longest,full
 set gdefault
 "set cursorline
