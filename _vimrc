@@ -1,28 +1,35 @@
 "Vundle Part
- set nocompatible               " be iMproved
- filetype off                   " required!
- "location of plugins
-let vimfilespath="C:/vimfiles"
- "location of the configuration
+set nocompatible               " be iMproved
+filetype off                   " required!
+"location of plugins
+if has('win32')
+	let vimfilespath="C:/vimfiles"
+elseif has('unix')
+	let vimfilespath="~/vimfiles"
+endif
+"location of the configuration
 
 let &runtimepath=vimfilespath."/bundle,".$VIMRUNTIME
 
- execute "set rtp+=".vimfilespath."/bundle/vundle"
- call vundle#rc(vimfilespath."/bundle/")
+execute " set rtp+=".vimfilespath."/bundle/vundle"
+call vundle#rc(vimfilespath."/bundle/")
 
- " let Vundle manage Vundle
- " required! 
- Bundle 'gmarik/vundle'
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
 
- " My Bundles here:
- "
- " original repos on github
- " git plugin
- Bundle 'tpope/vim-fugitive'
- "easymotion press <leader><leader>f/F/w/W/b/B to get a selectable motion
- Bundle 'Lokaltog/vim-easymotion'
- "singleCompile
- Bundle 'xuhdev/SingleCompile'
+" My Bundles here:
+"
+" original repos on github
+" git plugin
+Bundle 'tpope/vim-fugitive'
+
+"easymotion press <leader><leader>f/F/w/W/b/B to get a selectable motion
+Bundle 'Lokaltog/vim-easymotion'
+
+"singleCompile
+Bundle 'xuhdev/SingleCompile'
+
 "colorscheme
 "taglist
 Bundle "Tagbar"
@@ -35,12 +42,8 @@ Bundle 'Valloric/YouCompleteMe'
 "parenthesis enhancement
 Bundle 'kien/rainbow_parentheses.vim'
 
-"javascript
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'mattn/zencoding-vim'
-Bundle 'joestelmach/lint.vim'
-Bundle 'mmalecki/vim-node.js'
 Bundle 'matlab.vim'
+
 filetype plugin indent on     " required!
 "
 " Brief help
@@ -120,8 +123,6 @@ let g:ycm_semantic_triggers =  {
 			\ }
 let g:ycm_cache_omnifunc = 1
 
-"javascriptlibrarys
-let g:used_javascript_libs = 'jquery'
 
 "easymotion
 let g:EasyMotion_leader_key=','
