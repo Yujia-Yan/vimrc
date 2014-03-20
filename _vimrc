@@ -79,7 +79,8 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese
 set fileencoding=utf-8
 set mouse=a
-set matchpairs=<:>
+set matchpairs+=<:>
+set matchpairs+={:}
 set wildmenu 
 set wildmode=list:longest,full
 set gdefault
@@ -137,7 +138,8 @@ let g:ycm_cache_omnifunc = 1
 "
 "key bind
 "press ctrl+x to close the file
-nnoremap <C-x> <Esc>:q<CR>
+nnoremap <C-w> :q<CR>
+inoremap <C-w> <Esc>:q<CR>
 "go to definition <leader>jd
 noremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
@@ -145,7 +147,18 @@ noremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <silent><F2> :nohlsearch<CR>
 
 "save the file
-nmap<F3> :w<CR>
+nnoremap<F3> :w<CR>
+inoremap<F3> :w<CR>
+
+"tab navigation
+nnoremap <c-t> :tabnew<CR>
+nnoremap <c-left> :tabprevious<CR>
+nnoremap <c-right> :tabnext<CR>
+
+inoremap <c-t> <Esc>:tabnew<CR>
+inoremap <c-left> <Esc>:tabprevious<CR>
+inoremap <c-right> <Esc>:tabnext<CR>
+
 
 "Debug and Build
 "compile and run with the default setting
