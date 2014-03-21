@@ -142,8 +142,8 @@ let g:ycm_cache_omnifunc = 1
 "
 "key bind
 "press ctrl+x to close the file
-nnoremap <C-w> :q<CR>
-inoremap <C-w> <Esc>:q<CR>
+nnoremap <C-x> :q<CR>
+inoremap <C-x> <Esc>:q<CR>
 "go to definition <leader>jd
 noremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
