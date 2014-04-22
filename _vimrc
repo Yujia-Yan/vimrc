@@ -176,6 +176,7 @@ vnoremap <Leader>a, :Tabularize /,<CR>
 nmap <F5> :SCCompileRun<cr>
 "auto format
 noremap <F4> <Esc>:Autoformat<CR>
+inoremap<F4> <Esc>:Autoformat<CR>
 "trigger taglist
 nnoremap <silent> <F8> :TagbarToggle<CR>
 "trigger NERDTree
