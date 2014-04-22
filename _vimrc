@@ -151,8 +151,8 @@ noremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <silent><F2> :nohlsearch<CR>
 
 "save the file
-nnoremap<F3> :w<CR>
-inoremap<F3> :w<CR>
+nnoremap<F3> <Esc>:w<CR>
+inoremap<F3> <Esc>:w<CR>
 
 "tab navigation
 nnoremap <c-t> :tabnew<CR>
@@ -172,10 +172,10 @@ vnoremap <Leader>a, :Tabularize /,<CR>
 "Debug and Build
 "compile and run with the default setting
 " map<F5> :call CompileRun()<CR>
-nmap <F4> :SCCompile<cr>
+"nmap <F4> :SCCompile<cr>
 nmap <F5> :SCCompileRun<cr>
 "auto format
-noremap <F4> :Autoformat<CR>
+noremap <F4> <Esc>:Autoformat<CR>
 "trigger taglist
 nnoremap <silent> <F8> :TagbarToggle<CR>
 "trigger NERDTree
