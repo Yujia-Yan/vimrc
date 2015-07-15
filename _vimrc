@@ -39,8 +39,6 @@ Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/nerdcommenter"
 "autocomplete Engine
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'bbchung/clighter'
-Bundle 'matthiasvegh/ycmlighter'
 "parenthesis enhancement
 Bundle 'kien/rainbow_parentheses.vim'
 
